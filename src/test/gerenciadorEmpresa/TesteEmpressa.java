@@ -75,21 +75,20 @@ public class TesteEmpressa {
 	
 	
 	
+	
 	/*Lista de testes
 
 
 
 
 
-ocurencia.getChave
-ocurencia.getResume
-ocurencia.getFoncionario
+
 funcionario.addProjeto
 foncionario.getProjetos
 foncionario.getporjetoResponsavel (verifica <=10)
 foncoinario.addProjectoResponsavel (verifica <=10)
 
-
+verificar que a chave de ocurencia e unica.
 
 	 */
 	
