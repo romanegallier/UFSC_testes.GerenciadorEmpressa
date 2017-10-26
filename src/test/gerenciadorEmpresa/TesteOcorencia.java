@@ -9,22 +9,22 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import gerenciadorEmpresa.Empresa;
-import gerenciadorEmpresa.Fonctionario;
-import gerenciadorEmpresa.Ocurencia;
+import gerenciadorEmpresa.Funcionario;
+import gerenciadorEmpresa.Ocorrencia;
 import gerenciadorEmpresa.Prioridades;
 import gerenciadorEmpresa.Projeto;
 
-public class TesteOcurencia {
+public class TesteOcorencia {
 	
 	private Empresa empresa;
-	private Fonctionario joao;
+	private Funcionario joao;
 	private Projeto projeto;
 	
 
 	@Before
 	public void setUp() throws Exception {
 		this.empresa =new Empresa();
-		this.joao = new Fonctionario();
+		this.joao = new Funcionario();
 		this.projeto = new Projeto();
 	}
 
@@ -32,8 +32,8 @@ public class TesteOcurencia {
 	
 	@Test
 	public void CrearOcurencia() throws Exception {
-		Fonctionario fonctionario = new Fonctionario();
-		Ocurencia ocurencia= new Ocurencia(Prioridades.ALTA, "resumo",fonctionario);
+		Funcionario fonctionario = new Funcionario();
+		Ocorrencia ocurencia= new Ocorrencia(Prioridades.ALTA, "resumo",fonctionario);
 		assertEquals(Prioridades.ALTA, ocurencia.getPrioridade());
 	}
 	
@@ -41,25 +41,25 @@ public class TesteOcurencia {
 	
 	@Test
 	public void reucperarChaveDaOcurencia() throws Exception {
-		Fonctionario fonctionario = new Fonctionario();
-		Ocurencia ocurencia= new Ocurencia(Prioridades.ALTA, "resumo",fonctionario);
+		Funcionario fonctionario = new Funcionario();
+		Ocorrencia ocurencia= new Ocorrencia(Prioridades.ALTA, "resumo",fonctionario);
 		long chave = ocurencia.getChave();
 		assertNotEquals(null, chave);
 	}
 	
 	@Test
 	public void recuperarResumeOcurencia() throws Exception {
-		Fonctionario fonctionario = new Fonctionario();
-		Ocurencia ocurencia= new Ocurencia(Prioridades.ALTA, "resumo",fonctionario);
+		Funcionario fonctionario = new Funcionario();
+		Ocorrencia ocurencia= new Ocorrencia(Prioridades.ALTA, "resumo",fonctionario);
 		String resume = ocurencia.getResume();
 		assertEquals(resume, "resumo");
 	}	
 	
 	@Test
 	public void recuperarFonctionarioOcurencia() throws Exception {
-		Fonctionario fonctionario = new Fonctionario();
-		Ocurencia ocurencia= new Ocurencia(Prioridades.ALTA, "resumo",fonctionario);
-		Fonctionario fonctionario2 = ocurencia.getFonctionario();
+		Funcionario fonctionario = new Funcionario();
+		Ocorrencia ocurencia= new Ocorrencia(Prioridades.ALTA, "resumo",fonctionario);
+		Funcionario fonctionario2 = ocurencia.getFonctionario();
 		assertEquals(fonctionario,fonctionario2);
 	}
 	

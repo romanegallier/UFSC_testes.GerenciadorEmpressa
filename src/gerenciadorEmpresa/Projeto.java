@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Projeto {
-	List<Ocurencia> ocorrencias;
+	List<Ocorrencia> ocorrencias;
 	
 	public Projeto() {
-		this.ocorrencias = new ArrayList<Ocurencia>();
+		this.ocorrencias = new ArrayList<Ocorrencia>();
 	}	
 
-	public void addOcorrencia(Ocurencia ocurencia) {
+	public void addOcorrencia(Ocorrencia ocurencia) {
 		
 		this.ocorrencias.add(ocurencia);
 	}
 
-	public Ocurencia getOcorrencia(int i) {
+	public Ocorrencia getOcorrencia(int i) {
 		
 		return this.ocorrencias.get(i);
 	}

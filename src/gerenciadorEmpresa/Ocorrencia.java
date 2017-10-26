@@ -1,11 +1,11 @@
 package gerenciadorEmpresa;
 
-public class Ocurencia {
+public class Ocorrencia {
 	Prioridades prioridades;
 	String resumo;
-	private Fonctionario fonctionario;
+	private Funcionario fonctionario;
 
-	public Ocurencia(Prioridades p, String string, Fonctionario fonctionario) {
+	public Ocorrencia(Prioridades p, String string, Funcionario fonctionario) {
 		this.prioridades=p;
 		this.resumo=string;
 		this.fonctionario=fonctionario;
@@ -26,7 +26,7 @@ public class Ocurencia {
 		return resumo;
 	}
 
-	public Fonctionario getFonctionario() {
+	public Funcionario getFonctionario() {
 		return fonctionario;
 	}
 

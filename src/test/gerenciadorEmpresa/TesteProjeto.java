@@ -9,8 +9,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import gerenciadorEmpresa.Empresa;
-import gerenciadorEmpresa.Fonctionario;
-import gerenciadorEmpresa.Ocurencia;
+import gerenciadorEmpresa.Funcionario;
+import gerenciadorEmpresa.Ocorrencia;
 import gerenciadorEmpresa.Projeto;
 
 public class TesteProjeto {
@@ -25,14 +25,14 @@ public class TesteProjeto {
 	}
 
 	private Empresa empresa;
-	private Fonctionario joao;
+	private Funcionario joao;
 	private Projeto projeto;
 	
 
 	@Before
 	public void setUp() throws Exception {
 		this.empresa =new Empresa();
-		this.joao = new Fonctionario();
+		this.joao = new Funcionario();
 		this.projeto = new Projeto();
 	}
 
@@ -48,7 +48,7 @@ public class TesteProjeto {
 		
 	@Test
 	public void obterOcorrencia() throws Exception {
-		Ocurencia oco = new Ocurencia(null, null, joao);
+		Ocorrencia oco = new Ocorrencia(null, null, joao);
 		projeto.addOcorrencia(oco);
 		assertEquals( oco, projeto.getOcorrencia(0));
 	}

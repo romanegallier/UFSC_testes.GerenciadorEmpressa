@@ -8,20 +8,20 @@ import org.junit.Before;
 import org.junit.Test;
 
 import gerenciadorEmpresa.Empresa;
-import gerenciadorEmpresa.Fonctionario;
+import gerenciadorEmpresa.Funcionario;
 import gerenciadorEmpresa.Projeto;
 
-public class TesteFonctionario {
+public class TesteFuncionario {
 
 	private Empresa empresa;
-	private Fonctionario joao;
+	private Funcionario joao;
 	private Projeto projeto;
 	
 
 	@Before
 	public void setUp() throws Exception {
 		this.empresa =new Empresa();
-		this.joao = new Fonctionario();
+		this.joao = new Funcionario();
 		this.projeto = new Projeto();
 	}
 

@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Empresa {
-	List<Fonctionario> fonctionario;
+	List<Funcionario> fonctionario;
 	private List<Projeto> projeto;
 	
 
 	public Empresa() {
-		this.fonctionario=new ArrayList<Fonctionario>();
+		this.fonctionario=new ArrayList<Funcionario>();
 		this.projeto=new ArrayList<Projeto>();
 	}
 	
-	public void addFontionario(Fonctionario fonctionario) {
+	public void addFontionario(Funcionario fonctionario) {
 		this.fonctionario.add(fonctionario);
 	}
 

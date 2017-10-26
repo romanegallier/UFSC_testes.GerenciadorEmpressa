@@ -3,11 +3,11 @@ package gerenciadorEmpresa;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fonctionario {
+public class Funcionario {
 
 	List <Projeto> projetos;
 	
-	public Fonctionario() {
+	public Funcionario() {
 		projetos = new ArrayList<Projeto>();
 	}
 

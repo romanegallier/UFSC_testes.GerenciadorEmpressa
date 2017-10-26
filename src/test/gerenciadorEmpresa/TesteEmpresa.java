@@ -9,25 +9,25 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import gerenciadorEmpresa.Empresa;
-import gerenciadorEmpresa.Fonctionario;
-import gerenciadorEmpresa.Ocurencia;
+import gerenciadorEmpresa.Funcionario;
+import gerenciadorEmpresa.Ocorrencia;
 import gerenciadorEmpresa.Prioridades;
 import gerenciadorEmpresa.Projeto;
 
-public class TesteEmpressa {
+public class TesteEmpresa {
 	
 
 	
 
 	private Empresa empresa;
-	private Fonctionario joao;
+	private Funcionario joao;
 	private Projeto projeto;
 	
 
 	@Before
 	public void setUp() throws Exception {
 		this.empresa =new Empresa();
-		this.joao = new Fonctionario();
+		this.joao = new Funcionario();
 		this.projeto = new Projeto();
 	}
 
@@ -40,7 +40,7 @@ public class TesteEmpressa {
 	
 	@Test
 	public void criarFonctionario() throws Exception {
-		Fonctionario joao = new Fonctionario();
+		Funcionario joao = new Funcionario();
 		assertNotEquals(null, joao);
 	}
 	
@@ -53,8 +53,8 @@ public class TesteEmpressa {
 	
 	@Test
 	public void criarOcurencia() throws Exception {
-		Fonctionario fonctionario = new Fonctionario();
-		Ocurencia ocurencia= new Ocurencia(Prioridades.ALTA, "resumo",fonctionario);
+		Funcionario fonctionario = new Funcionario();
+		Ocorrencia ocurencia= new Ocorrencia(Prioridades.ALTA, "resumo",fonctionario);
 		assertEquals(Prioridades.ALTA, ocurencia.getPrioridade());
 	}
 	
@@ -67,7 +67,7 @@ public class TesteEmpressa {
 	@Test
 	public void aditionar2FonctionariosEmpressa() throws Exception {
 		empresa.addFontionario(joao);
-		Fonctionario mario =new Fonctionario();
+		Funcionario mario =new Funcionario();
 		empresa.addFontionario(mario);
 		assertEquals(joao, empresa.getFonctionario(0));
 		assertEquals(mario, empresa.getFonctionario(1));
