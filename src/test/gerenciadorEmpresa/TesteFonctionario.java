@@ -7,6 +7,10 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import gerenciadorEmpresa.Empresa;
+import gerenciadorEmpresa.Fonctionario;
+import gerenciadorEmpresa.Projeto;
+
 public class TesteFonctionario {
 
 	private Empresa empresa;

@@ -1,4 +1,4 @@
-package test.gerenciadorEmpresa;
+package gerenciadorEmpresa;
 
 public enum Prioridades {
 	ALTA;

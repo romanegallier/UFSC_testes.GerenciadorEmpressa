@@ -1,4 +1,4 @@
-package test.gerenciadorEmpresa;
+package gerenciadorEmpresa;
 
 import java.util.ArrayList;
 import java.util.List;

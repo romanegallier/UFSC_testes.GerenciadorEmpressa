@@ -8,6 +8,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import gerenciadorEmpresa.Empresa;
+import gerenciadorEmpresa.Fonctionario;
+import gerenciadorEmpresa.Ocurencia;
+import gerenciadorEmpresa.Projeto;
+
 public class TesteProjeto {
 	
 		
