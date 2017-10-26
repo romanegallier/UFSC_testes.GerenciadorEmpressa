@@ -20,10 +20,7 @@ public class Funcionario {
 	}
 
 	public void addProjetoResponsavel(Projeto projeto) {
-		if( projetosResponsavel.size() < 10 )
-		{
-			this.projetosResponsavel.add(projeto);
-		}
+		this.projetosResponsavel.add(projeto);
 	}
 
 	public List<Projeto> getProjetosResponsavel() {

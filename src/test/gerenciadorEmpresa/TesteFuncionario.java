@@ -58,11 +58,10 @@ public class TesteFuncionario {
 	@Test(expected = Exception.class)
 	public void criarEFecharCom12Ocorrencias() throws Exception {
 		
-		criar12OcorrenciasParaJoao();
+		criar11OcorrenciasParaJoao();
 	}
 	
-	private void criar12OcorrenciasParaJoao() throws Exception {
-		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+	private void criar11OcorrenciasParaJoao() throws Exception {
 		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
 		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
 		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");

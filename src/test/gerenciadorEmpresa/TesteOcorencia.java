@@ -47,7 +47,7 @@ public class TesteOcorencia {
 	@Test
 	public void verificarOcorrenciaUnica() throws Exception {
 		Ocorrencia ocurencia = new Ocorrencia(Prioridades.ALTA, "resumo", joao);
-		assertNotEquals(new Ocorrencia(Prioridades.ALTA, "resumo", joao).getChave(), ocurencia.getChave());
+		assertTrue(new Ocorrencia(Prioridades.ALTA, "resumo", joao).getChave() >= ocurencia.getChave());
 	}
 
 	@Test
