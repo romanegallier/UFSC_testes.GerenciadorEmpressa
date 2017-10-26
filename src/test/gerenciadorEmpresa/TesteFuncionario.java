@@ -3,14 +3,13 @@ package test.gerenciadorEmpresa;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import gerenciadorEmpresa.Empresa;
 import gerenciadorEmpresa.Funcionario;
+import gerenciadorEmpresa.Prioridades;
 import gerenciadorEmpresa.Projeto;
 
 public class TesteFuncionario {
@@ -31,7 +30,7 @@ public class TesteFuncionario {
 
 	@Test
 	public void additionarProjetoNoFunctionario() throws Exception {
-		joao.addProjetorResponsavel(projeto);
+		joao.addProjetoResponsavel(projeto);
 		List<Projeto> responsabilidadesDoJoao = joao.getProjetosResponsavel();
 		
 		assertEquals(1, responsabilidadesDoJoao.size());
@@ -51,26 +50,55 @@ public class TesteFuncionario {
 
 	@Test
 	public void ResponsavelPorProjetosMenorQue10() throws Exception {
-		
-		criar10ProjetosParaJoao();
-		List<Projeto> projetos = joao.getProjetos();
-		
-		assertEquals(10, projetos.size());
+		List<Projeto> projetos = joao.getProjetosResponsavel();
+		assertEquals(0, projetos.size());
 	}
 
-	private void criar10ProjetosParaJoao() {
-		joao.addProjetoQueParticipa(new Projeto());
-		joao.addProjetoQueParticipa(new Projeto());
-		joao.addProjetoQueParticipa(new Projeto());
-		joao.addProjetoQueParticipa(new Projeto());
-		joao.addProjetoQueParticipa(new Projeto());
-		joao.addProjetoQueParticipa(new Projeto());
-		joao.addProjetoQueParticipa(new Projeto());
-		joao.addProjetoQueParticipa(new Projeto());
-		joao.addProjetoQueParticipa(new Projeto());
-		joao.addProjetoQueParticipa(new Projeto());
-		joao.addProjetoQueParticipa(new Projeto());
-		joao.addProjetoQueParticipa(new Projeto());
+
+	@Test(expected = Exception.class)
+	public void criarEFecharCom12Ocorrencias() throws Exception {
+		
+		criar12OcorrenciasParaJoao();
+	}
+	
+	private void criar12OcorrenciasParaJoao() throws Exception {
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
 	}
 
+
+	@Test
+	public void criarEFecharCom10Ocorrencias() throws Exception {
+		criar10OcorrenciasParaJoao();
+		assertEquals( 10, joao.getOcorrenciasAbertas().size());
+		
+		joao.fecharOcorrencia(0);
+		assertEquals( 9, joao.getOcorrenciasAbertas().size());
+		
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");;
+		assertEquals( 10, joao.getOcorrenciasAbertas().size());
+	}
+	
+	private void criar10OcorrenciasParaJoao() throws Exception {
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+		joao.addOcorrenciasResponsavel(Prioridades.ALTA, "resumo");
+	}
 }
