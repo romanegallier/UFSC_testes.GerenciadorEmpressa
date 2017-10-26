@@ -1,7 +1,9 @@
 package test.gerenciadorEmpresa;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
@@ -13,52 +15,62 @@ import gerenciadorEmpresa.Projeto;
 
 public class TesteFuncionario {
 
-	private Empresa empresa;
 	private Funcionario joao;
 	private Projeto projeto;
-	
 
 	@Before
 	public void setUp() throws Exception {
-		this.empresa =new Empresa();
 		this.joao = new Funcionario();
 		this.projeto = new Projeto();
 	}
-
-	
 
 	@Test
 	public void criarFonctionario() throws Exception {
 		assertNotEquals(null, joao);
 	}
-	
-	
+
 	@Test
 	public void additionarProjetoNoFunctionario() throws Exception {
-		joao.addProjeto(projeto);
-		List<Projeto> l =joao.getProjetos();
-		assertEquals(1, l.size());
-		assertEquals(projeto, l.get(0));
+		joao.addProjetorResponsavel(projeto);
+		List<Projeto> responsabilidadesDoJoao = joao.getProjetosResponsavel();
+		
+		assertEquals(1, responsabilidadesDoJoao.size());
+		assertEquals(projeto, responsabilidadesDoJoao.get(0));
 	}
-	
+
 	@Test
-	public void getResponsavelDoProjeto() throws Exception {
-		//TODO
+	public void getProjetos() throws Exception {
+		
+		joao.addProjetoQueParticipa(projeto);
+		List<Projeto> projetos = joao.getProjetos();
+		
+		assertEquals(1, projetos.size());
+		assertEquals(projeto, projetos.get(0));
+
 	}
-	/*Lista de testes
 
+	@Test
+	public void ResponsavelPorProjetosMenorQue10() throws Exception {
+		
+		criar10ProjetosParaJoao();
+		List<Projeto> projetos = joao.getProjetos();
+		
+		assertEquals(10, projetos.size());
+	}
 
-
-
-
-
-
-foncionario.getporjetoResponsavel (verifica <=10)
-foncoinario.addProjectoResponsavel (verifica <=10)
-
-verificar que a chave de ocurencia e unica.
-
-	 */
-	
+	private void criar10ProjetosParaJoao() {
+		joao.addProjetoQueParticipa(new Projeto());
+		joao.addProjetoQueParticipa(new Projeto());
+		joao.addProjetoQueParticipa(new Projeto());
+		joao.addProjetoQueParticipa(new Projeto());
+		joao.addProjetoQueParticipa(new Projeto());
+		joao.addProjetoQueParticipa(new Projeto());
+		joao.addProjetoQueParticipa(new Projeto());
+		joao.addProjetoQueParticipa(new Projeto());
+		joao.addProjetoQueParticipa(new Projeto());
+		joao.addProjetoQueParticipa(new Projeto());
+		joao.addProjetoQueParticipa(new Projeto());
+		joao.addProjetoQueParticipa(new Projeto());
+	}
 
 }

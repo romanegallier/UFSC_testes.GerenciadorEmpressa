@@ -16,9 +16,6 @@ import gerenciadorEmpresa.Projeto;
 
 public class TesteEmpresa {
 	
-
-	
-
 	private Empresa empresa;
 	private Funcionario joao;
 	private Projeto projeto;
@@ -31,7 +28,6 @@ public class TesteEmpresa {
 		this.projeto = new Projeto();
 	}
 
-	
 
 	@Test
 	public void criarEmpresa() {
@@ -39,7 +35,7 @@ public class TesteEmpresa {
 	}
 	
 	@Test
-	public void criarFonctionario() throws Exception {
+	public void criarFuncionario() throws Exception {
 		Funcionario joao = new Funcionario();
 		assertNotEquals(null, joao);
 	}
@@ -50,54 +46,42 @@ public class TesteEmpresa {
 		assertNotEquals(null, projeto);
 	}
 	
-	
 	@Test
-	public void criarOcurencia() throws Exception {
+	public void criarOcurrencia() throws Exception {
 		Funcionario fonctionario = new Funcionario();
 		Ocorrencia ocurencia= new Ocorrencia(Prioridades.ALTA, "resumo",fonctionario);
 		assertEquals(Prioridades.ALTA, ocurencia.getPrioridade());
 	}
 	
 	@Test
-	public void aditionarFonctionariosEmpressa() throws Exception {
-		empresa.addFontionario(joao);
+	public void adicionarFuncionariosEmpresa() throws Exception {
+		empresa.addFuncionario(joao);
 		assertEquals(joao, empresa.getFonctionario(0));
 	}
 	
 	@Test
-	public void aditionar2FonctionariosEmpressa() throws Exception {
-		empresa.addFontionario(joao);
+	public void adicionar2FonctionariosEmpresa() throws Exception {
+		empresa.addFuncionario(joao);
 		Funcionario mario =new Funcionario();
-		empresa.addFontionario(mario);
+		empresa.addFuncionario(mario);
 		assertEquals(joao, empresa.getFonctionario(0));
 		assertEquals(mario, empresa.getFonctionario(1));
 	}
 	
 	@Test
-	public void aditionarProjetoNaEmpresa() throws Exception {
+	public void adicionarProjetoNaEmpresa() throws Exception {
 		empresa.addProjeto(projeto);
 		assertEquals(projeto, empresa.getProjeto(0));
 	}
 	
 	
+
 	
 	
 	/*Lista de testes
 
 
 
-
-
-
-funcionario.addProjeto
-foncionario.getProjetos
-foncionario.getporjetoResponsavel (verifica <=10)
-foncoinario.addProjectoResponsavel (verifica <=10)
-
-verificar que a chave de ocurencia e unica.
-
 	 */
-	
-	
 
 }

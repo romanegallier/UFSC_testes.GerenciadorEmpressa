@@ -4,12 +4,15 @@ public class Ocorrencia {
 	Prioridades prioridades;
 	String resumo;
 	private Funcionario fonctionario;
-
+	private int codigo_ocorrencia;
+	private static int codigo_ocorencias = 0;
+	
 	public Ocorrencia(Prioridades p, String string, Funcionario fonctionario) {
 		this.prioridades=p;
 		this.resumo=string;
 		this.fonctionario=fonctionario;
-		
+		this.codigo_ocorrencia = codigo_ocorencias;
+		codigo_ocorencias += 1;
 	}
 
 	public Object getPrioridade() {
@@ -17,8 +20,7 @@ public class Ocorrencia {
 	}
 
 	public long getChave() {
-		// TODO Auto-generated method stub
-		return 0;
+		return codigo_ocorrencia;
 	}
 
 	public String getResume() {

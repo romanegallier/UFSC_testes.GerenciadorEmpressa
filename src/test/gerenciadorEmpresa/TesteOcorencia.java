@@ -20,7 +20,6 @@ public class TesteOcorencia {
 	private Funcionario joao;
 	private Projeto projeto;
 	
-
 	@Before
 	public void setUp() throws Exception {
 		this.empresa =new Empresa();
@@ -29,18 +28,15 @@ public class TesteOcorencia {
 	}
 
 
-	
 	@Test
-	public void CrearOcurencia() throws Exception {
+	public void criarOcurrencia() throws Exception {
 		Funcionario fonctionario = new Funcionario();
 		Ocorrencia ocurencia= new Ocorrencia(Prioridades.ALTA, "resumo",fonctionario);
 		assertEquals(Prioridades.ALTA, ocurencia.getPrioridade());
 	}
 	
-	
-	
 	@Test
-	public void reucperarChaveDaOcurencia() throws Exception {
+	public void recuperarChaveDaOcurrencia() throws Exception {
 		Funcionario fonctionario = new Funcionario();
 		Ocorrencia ocurencia= new Ocorrencia(Prioridades.ALTA, "resumo",fonctionario);
 		long chave = ocurencia.getChave();
@@ -48,7 +44,7 @@ public class TesteOcorencia {
 	}
 	
 	@Test
-	public void recuperarResumeOcurencia() throws Exception {
+	public void recuperarResumoOcurrencia() throws Exception {
 		Funcionario fonctionario = new Funcionario();
 		Ocorrencia ocurencia= new Ocorrencia(Prioridades.ALTA, "resumo",fonctionario);
 		String resume = ocurencia.getResume();
@@ -56,13 +52,28 @@ public class TesteOcorencia {
 	}	
 	
 	@Test
-	public void recuperarFonctionarioOcurencia() throws Exception {
+	public void recuperarFuncionarioOcurrencia() throws Exception {
 		Funcionario fonctionario = new Funcionario();
 		Ocorrencia ocurencia= new Ocorrencia(Prioridades.ALTA, "resumo",fonctionario);
 		Funcionario fonctionario2 = ocurencia.getFonctionario();
 		assertEquals(fonctionario,fonctionario2);
 	}
+
+	@Test
+	public void verificarOcorrenciaUnica() throws Exception {
+		Funcionario fonctionario = new Funcionario();
+		Ocorrencia ocurencia= new Ocorrencia(Prioridades.ALTA, "resumo",fonctionario);
+		
+		assertNotEquals(new Ocorrencia(Prioridades.ALTA, "resumo",fonctionario).getChave(), ocurencia.getChave());
+	}
 	
-	
+	/*
+
+Lista de testes
+
+
+verificar que a chave de ocurencia e unica.
+ 
+	 */
 
 }

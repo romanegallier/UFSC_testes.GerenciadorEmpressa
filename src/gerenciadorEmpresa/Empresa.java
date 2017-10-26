@@ -13,7 +13,7 @@ public class Empresa {
 		this.projeto=new ArrayList<Projeto>();
 	}
 	
-	public void addFontionario(Funcionario fonctionario) {
+	public void addFuncionario(Funcionario fonctionario) {
 		this.fonctionario.add(fonctionario);
 	}
 

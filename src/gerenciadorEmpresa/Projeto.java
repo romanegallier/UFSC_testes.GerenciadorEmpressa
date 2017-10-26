@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Projeto {
 	List<Ocorrencia> ocorrencias;
+	private Funcionario responsavelDoProjeto;
 	
 	public Projeto() {
 		this.ocorrencias = new ArrayList<Ocorrencia>();
@@ -18,6 +19,14 @@ public class Projeto {
 	public Ocorrencia getOcorrencia(int i) {
 		
 		return this.ocorrencias.get(i);
+	}
+
+	public Funcionario getResponsavel() {
+		return this.responsavelDoProjeto;
+	}
+
+	public void setResponsavel(Funcionario joao) {
+		this.responsavelDoProjeto = joao;
 	}
 
 }
